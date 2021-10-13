@@ -139,7 +139,7 @@
   //新增圖片方法
   function add_pic(){
   	$("#addpic").append('<input type="file" id="img">');
-    $("#addpic").append(document.getElementById('img'));
+    $("#addpic").attr('src',document.getElementById('img'));
   }
 
   //圖片預覽
