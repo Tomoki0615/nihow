@@ -35,7 +35,7 @@
           		<h1 class="col-2 logo mr-auto" style="text-align:center;"><span>練習</span></h1>
         		<div class="col-6">
               			<h5 class="col-10">需求單號:</h5>
-                    <p id="Test" style="display: inline;" onclick="test1()" onmouseenter="test2()">Test<p>
+                    <p id="Test" style="display: inline;" onclick="test1()" onmouseenter="test2()" onmouseleave="test3">Test<p>
     			</div>
     	
     	
@@ -118,10 +118,14 @@
     -->
     <script src="jquery-3.5.1.min.js"></script>
 <script>
-  function test2(){
   var Test = document.getElementById('Test');
-  Test.style.color='red';
-  Test.style.background='yellow';
+  function test2(){
+    Test.style.color='red';
+    Test.style.background='yellow';
+  }
+  function test3(){
+    Test.style.color='black';
+    Test.style.background='write';
   }
   //model顯示方法
   function test1(){
