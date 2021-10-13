@@ -66,7 +66,10 @@
     <button onclick="add_pic()" class="btn btn-primary col-2" type="button" id="add_pic">添加一份照片</button>
     <button onclick="delete_pic()" style="margin-left: 5px ;" class="btn btn-outline-secondary col-2" type="button">刪除照片</button>
 </div>
-        <div id="addpic">
+      <div id="addpic">
+        <img id="pictest" src="#">
+        <br>
+      </div>
 </div>
 
 <table class="table table-bordered" style="margin-top:15px;">
@@ -137,13 +140,11 @@
 
   //新增圖片方法
   function add_pic(){
-  	$("#addpic").append('<input type="file">')
+  	$("#addpic").append('<input type="file" id="img">');
+    $("#pictest").append(document.getElementById('img'));
   }
 
   //圖片預覽
-  function something(){
-
-  }
   //刪除圖片
   function delete_pic(){
 
