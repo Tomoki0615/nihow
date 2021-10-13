@@ -153,8 +153,8 @@
   //圖片預覽
   //刪除圖片
   function delete_pic(){
-    $("#addpic").remove(document.querySelector("#pictest"));
-    $("#addpic").remove(document.querySelector("#img"));
+    var img = document.querySelector("#img");
+    img.remove();
   }
 
 </script>
