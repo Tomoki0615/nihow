@@ -67,7 +67,6 @@
     <button onclick="delete_pic()" style="margin-left: 5px ;" class="btn btn-outline-secondary col-2" type="button">刪除照片</button>
 </div>
       <div id="addpic">
-      </div>
 </div>
 
 <table class="table table-bordered" style="margin-top:15px;">
@@ -138,8 +137,17 @@
 
   //新增圖片方法
   function add_pic(){
-  	$("#addpic").append('<input type="file" id="img">');
-    $("#addpic").attr('src',document.getElementById('img'));
+  	$("#addpic").append('<input type="file" id="img"> <img id="pictest">');
+  	$("#addpic").append('<img id="pictest">');
+    $("#img").change(function(){
+      var img= $('#img')[0].files[0];
+      var reader = new FileReader;
+      reader.onload = function(e){
+        $('#pictest').attr('src' , e.target.result);
+      };
+      reader.readAsDataURL(img);
+    }
+    );
   }
 
   //圖片預覽
