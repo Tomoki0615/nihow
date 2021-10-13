@@ -34,7 +34,7 @@
 		<div class="container d-flex align-items-center">
           		<h1 class="col-2 logo mr-auto" style="text-align:center;"><span>練習</span></h1>
         		<div class="col-6">
-              			<h5 class="col-10">需求單號:Test </h5>
+              			<h5 class="col-10">需求單號:<h5 id="Test" onclick="test1()">Test</h5>> </h5>
     			</div>
     	
     	
@@ -117,20 +117,26 @@
     -->
     <script src="jquery-3.5.1.min.js"></script>
 <script>
+  var Test = document.getElementById('Test');
+  Test.style.color='red';
+  Test.style.background='yellow';
   //model顯示方法
-
+  function test1(){
+    alert('你好!');
+  }
   //model button點擊model內部值
 
   //網頁加載執行方法
 
   //新增圖片方法
-
   function add_pic(){
-  	//$("#add_pic").append('<input type="file">')
+  	$("#add_pic").append('<input type="file">')
   }
 
   //圖片預覽
+  function something(){
 
+  }
   //刪除圖片
   function delete_pic(){
 
