@@ -140,7 +140,9 @@
   	$("#addpic").append('<input type="file" id="img">');
   	$("#addpic").append('<img id="pictest">');
     $("#img").change(function(){
-      var img= $('#img')[0].files[0];
+      var imgnum = document.getElementById('img');
+      var num = imgnum.length;
+      var img= $('#img')[num].files[0];
       var reader = new FileReader;
       reader.onload = function(e){
         $('#pictest').attr('src' , e.target.result);
