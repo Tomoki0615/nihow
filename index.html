@@ -143,9 +143,7 @@
 
   //圖片預覽
     $("#imgfile").change(function(){
-    var imgnum = document.getElementById('imgfile');
-    var num = imgnum.length-1;
-    var img= $('#imgfile')[num].files[num];
+    var img= $('#imgfile')[0].files[0];
     var reader = new FileReader;
     reader.onload = function(e){
       var realimg = $('#pictest').attr('src' , e.target.result);
