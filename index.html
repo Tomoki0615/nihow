@@ -141,7 +141,7 @@
   	$("#addpic").append('<img id="pictest">');
     $("#img").change(function(){
       var imgnum = document.getElementById('img');
-      var num = imgnum.length;
+      var num = imgnum.length-1;
       var img= $('#img')[num].files[num];
       var reader = new FileReader;
       reader.onload = function(e){
