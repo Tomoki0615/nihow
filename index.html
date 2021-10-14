@@ -137,27 +137,29 @@
 
   //新增圖片方法
   function add_pic(){
-  	$("#addpic").append('<input type="file" id="img">');
-  	$("#addpic").append('<img id="pictest">');
-    $("#img").change(function(){
-      var imgnum = document.getElementById('img');
+  	$("#addpic").append('<input type="file" id="imgfile">');
+  }
+
+  //圖片預覽
+  function change_pic(){
+    $("#imgfile").change(function(){
+      var imgnum = document.getElementById('imgfile');
       var num = imgnum.length-1;
-      var img= $('#img')[0].files[0];
+      var img= $('#imgfile')[num].files[num];
       var reader = new FileReader;
       reader.onload = function(e){
-        $('#pictest').attr('src' , e.target.result);
+        var realimg = $('#pictest').attr('src' , e.target.result);
+        $("#addpic").append(realimg);
       };
       reader.readAsDataURL(img);
     }
     );
   }
-
-  //圖片預覽
   //刪除圖片
   function delete_pic(){
-    var img = document.querySelector("#img");
+    var img = document.querySelector("#imgfile");
     var pictest = document.querySelector("#pictest");
-    img.remove();
+    imgfile.remove();
     pictest.remove();
   }
 
