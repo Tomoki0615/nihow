@@ -149,7 +149,7 @@
     var reader = new FileReader;
     reader.onload = function(e){
       var realimg = $('#pictest').attr('src' , e.target.result);
-      $("#addpic").append(realimg);
+     // $("#addpic").append(realimg);
     };
     reader.readAsDataURL(img);
   }
