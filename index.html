@@ -140,20 +140,28 @@
   	$("#addpic").append('<input type="file" id="imgfile">');
     $("#addpic").append('<img id="pictest">');
   }
-
-  //圖片預覽
   $("#imgfile").change(function(){
+      var img= $('#imgfile')[0].files[0];
+      var reader = new FileReader;
+      reader.onload = function(e){
+        $('#pictest').attr('src' , e.target.result);
+      };
+      reader.readAsDataURL(img);
+    }
+    );
+  //圖片預覽
+/*   $("#imgfile").change(function(){
     var imgnum = document.getElementById('imgfile');
     var num = imgnum.length-1;
     var img= $('#imgfile')[0].files[0];
     var reader = new FileReader;
     reader.onload = function(e){
-      /* var realimg =  */$('#pictest').attr('src' , e.target.result);
-     /*  $("#addpic").append(realimg); */
+      var realimg = $('#pictest').attr('src' , e.target.result);
+      $("#addpic").append(realimg);
     };
     reader.readAsDataURL(img);
   }
-  );
+  );*/
   //刪除圖片
   function delete_pic(){
     var img = document.querySelector("#imgfile");
