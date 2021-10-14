@@ -139,8 +139,7 @@
   function add_pic(){
   	$("#addpic").append('<input type="file" id="imgfile">');
     $("#addpic").append('<img id="pictest">');
-  }
-  $("#imgfile").change(function(){
+    $("#imgfile").change(function(){
       var img= $('#imgfile')[0].files[0];
       var reader = new FileReader;
       reader.onload = function(e){
@@ -149,6 +148,8 @@
       reader.readAsDataURL(img);
     }
     );
+  }
+
   //圖片預覽
 /*   $("#imgfile").change(function(){
     var imgnum = document.getElementById('imgfile');
