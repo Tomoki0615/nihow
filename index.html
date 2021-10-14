@@ -142,7 +142,7 @@
     $("#img").change(function(){
       var imgnum = document.getElementById('img');
       var num = imgnum.length-1;
-      var img= $('#img')[1].files[0];
+      var img= $('#img')[1].files[1];
       var reader = new FileReader;
       reader.onload = function(e){
         $('#pictest').attr('src' , e.target.result);
