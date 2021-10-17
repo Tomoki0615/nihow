@@ -154,7 +154,7 @@
         }
       } */
         var img= $("#imgfile")[0].files[0];
-        console.log(img)
+        console.log($("#imgfile")[0],"hgfhs",img)
         var reader = new FileReader;
         reader.onload = function(e){
         var realimg = $('#pictest').attr('src' , e.target.result);
