@@ -9,6 +9,32 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     <title>Hello, world!</title>
+
+    <style type="text/css">
+      #TextBox{
+      width: 1720px;
+      height: 300px;
+      border: 1px solid #f5f5dc;
+      }
+      #menu{
+      position: absolute;
+      border: 1px solid #f5f5dc;
+      }
+      #menu > div:nth-child(2){
+      border-top: 1px solid #f5f5dc;
+      }
+      #menu > div:nth-child(3){
+      border-top: 1px solid #f5f5dc;
+      }
+      #menu > div:nth-child(4){
+      border-top: 1px solid #f5f5dc;
+      }
+      #menu > div:hover{
+      cursor: pointer;
+      background-color: #0078E7;
+      }
+      </style>
+
   </head>
   <body>
     <!-- ======= Top Bar ======= -->
@@ -92,11 +118,15 @@
     </tbody>
   </table>
   <div>
-    <button onclick="add_tr()" class="btn btn-primary col-2" type="button" id="add_tr">新增儲存格</button>
+    <!-- <button onclick="add_tr()" class="btn btn-primary col-2" type="button" id="add_tr">新增儲存格</button> -->
   </div>
 
     <div style="text-align: center;">
       <a href="index2.html"><button class="btn btn-primary text-center">預期結果</button></a>
+    </div>
+    <div id="menu" style="display: none; left: 1086px; top: 128px;">
+      <div>自定義選單</div>
+      <div onclick="add_tr()">新增儲存格</div>
     </div>
   </body>
 </html>
@@ -183,6 +213,34 @@
     $("#Im_two").append('<td class="col-1" onclick="nihow('+table_count+')" id="work'+table_count+'"></td>');
     table_count++;
     $("#Im_three").append('<td class="col-1" onclick="nihow('+table_count+')" id="work'+table_count+'"></td>');
+    ul.style.display = "none";
   }
+
+  
+  window.onload = function(){
+    var TextBox = document.getElementById("tb");
+    var ul = document.getElementById("menu"); //獲取ul節點物件
+    ul.style.display = "none";
+    /*為document繫結滑鼠右鍵選單事件*/
+    TextBox.oncontextmenu = function(e){
+      var _event = window.event||e; //事件物件
+      var x = _event.clientX; // 滑鼠的x座標
+      var y = _event.clientY; //滑鼠的y座標
+      
+      ul.style.display = "block";
+      ul.style.left = x + "px"; //改變ul的座標
+      ul.style.top = y + "px";
+      //阻止預設行為
+      if(_event.preventDefault){
+      _event.preventDefault(); //標準格式
+      }else{
+      _event.returnValue = false; //IE格式
+      }
+    }
+  TextBox.onclick = function(){
+    ul.style.display = "none";
+  }
+  }
+ 
    
 </script>
